@@ -19,6 +19,15 @@ public class ResponseUtils {
 		return msg;
 	}
 	
+	public static Map<String, Object> getMessage(Integer code, String orderStatus) {
+		Map<String, Object> msg = new TreeMap<>();
+		
+		msg.put(SushiConstants.MSG, geMessageByCodeAndStatus(code, orderStatus));
+		msg.put(SushiConstants.CODE, code);
+		
+		return msg;
+	}
+	
 	// get the return msg by the code and order status
 	private static String geMessageByCodeAndStatus(int code, String orderStatus) {
 		String msg = null;
